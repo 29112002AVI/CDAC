@@ -1,0 +1,190 @@
+...................................
+cdac@LAPTOP-NV03GB24:~$ cd
+cdac@LAPTOP-NV03GB24:~$ ls
+day1  file1.txt  subjects
+cdac@LAPTOP-NV03GB24:~$ mkdir LinuxAssignment
+cdac@LAPTOP-NV03GB24:~$ ls
+LinuxAssignment  day1  file1.txt  subjects
+..........................................
+
+cdac@LAPTOP-NV03GB24:~$ cd LinuxAssignment
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment$ touch file1.txt
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment$ ls -l
+total 0
+-rw-r--r-- 1 cdac cdac 0 Aug 28 17:58 file1.txt
+...............................................................
+
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment$ mkdir docs
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment$ ls
+docs  file1.txt
+
+.................................................
+
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment$ mkdir docs
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment$ ls
+docs  file1.txt
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment$ mv file1.txt docs
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment$ ls
+docs
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment$ rename file1.txt file2.txt
+Command 'rename' not found, but can be installed with:
+sudo apt install rename
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment$ mv file1.txt file2.txt
+mv: cannot stat 'file1.txt': No such file or directory
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment$ cd docs
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment/docs$ mv file1.txt file2.txt
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment/docs$ ls
+file2.txt
+
+................................................................
+
+file2.txt
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment/docs$ ls -l
+total 0
+-rw-r--r-- 1 cdac cdac 0 Aug 28 17:58 file2.txt
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment/docs$ chmod u+rwx file2.txt
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment/docs$ chmod o-rwx file2.txt
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment/docs$ chmod g-rwx file2.txt
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment/docs$ ls -l
+total 0
+-rwx------ 1 cdac cdac 0 Aug 28 17:58 file2.txt
+
+.............................................................
+
+cdac@LAPTOP-NV03GB24:~$ cd LinuxAssignment
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment$ ls
+docs
+cdac@LAPTOP-NV03GB24:~/LinuxAssignment$ ls docs
+file2.txt
+
+............................................................
+cdac@LAPTOP-NV03GB24:~$ find /etc -type f-name "*.txt"
+find: Must separate multiple arguments to -type using: ','
+cdac@LAPTOP-NV03GB24:~$ find ./etc -type f-name "*.txt"
+find: Must separate multiple arguments to -type using: ','
+cdac@LAPTOP-NV03GB24:~$ find ./ -name "*.txt"
+./file1.txt
+./LinuxAssignment/docs/file2.txt
+./day1/file3.txt
+
+..................................................
+
+cdac@LAPTOP-NV03GB24:~$ echo "Radhe Radhe"
+Radhe Radhe
+cdac@LAPTOP-NV03GB24:~$ cat >file1.txt
+hello
+Radhe Radhe
+cdac@LAPTOP-NV03GB24:~$ cat file1.txt
+hello
+Radhe Radhe
+cdac@LAPTOP-NV03GB24:~$ grep -l Radhe file1.txt
+file1.txt
+cdac@LAPTOP-NV03GB24:~$ cat file1.txt
+hello
+Radhe Radhe
+cdac@LAPTOP-NV03GB24:~$ cat >file1.txt
+Radhe is the new greeting.
+cdac@LAPTOP-NV03GB24:~$ grep -l Radhe file1.txt
+file1.txt
+cdac@LAPTOP-NV03GB24:~$ grep 'Radhe' file1.txt
+Radhe is the new greeting.
+
+.........................................................
+
+cdac@LAPTOP-NV03GB24:~$ date
+Wed Aug 28 18:50:22 IST 2024
+
+................................................
+
+cdac@LAPTOP-NV03GB24:~$ IP
+IP: command not found
+cdac@LAPTOP-NV03GB24:~$ hostname -I
+172.25.241.143
+
+..................................................
+
+LinuxAssignment  day1  docs  file1.txt  subjects
+cdac@LAPTOP-NV03GB24:~$ nano file1.txt
+cdac@LAPTOP-NV03GB24:~$ sed -i 's/Radhe/Krishna/g' file1.txt
+cdac@LAPTOP-NV03GB24:~$ cat file1.txt
+Krishna is the new greeting.
+
+........................................................
+Problem 2: Read the instructions carefully and answer accordingly. If there is 
+any need to insert some data then do that as well. 
+
+cdac@LAPTOP-NV03GB24:~$ head -10 data.txt
+hii
+hello
+gm
+gn
+evening
+sorry
+for
+you
+byee
+off
+
+..............................................
+
+off
+cdac@LAPTOP-NV03GB24:~$ tail -5 data.txt
+byee
+off
+on
+sing
+
+........................................
+
+cdac@LAPTOP-NV03GB24:~$ ls
+LinuxAssignment  data.txt  day1  docs  file1.txt  numbers.txt  subjects
+cdac@LAPTOP-NV03GB24:~$ dd if=file1.txt of=output.txt conv=ucase
+0+1 records in
+0+1 records out
+29 bytes copied, 0.000626571 s, 46.3 kB/s
+cdac@LAPTOP-NV03GB24:~$ ls
+LinuxAssignment  day1  file1.txt    output.txt
+data.txt         docs  numbers.txt  subjects
+cdac@LAPTOP-NV03GB24:~$ cat output.txt
+KRISHNA IS THE NEW GREETING.
+cdac@LAPTOP-NV03GB24:~$
+
+...................................................
+
+cdac@LAPTOP-NV03GB24:~$ nano file1.txt
+cdac@LAPTOP-NV03GB24:~$ sort file1.txt |uniq-c
+uniq-c: command not found
+cdac@LAPTOP-NV03GB24:~$ sort file1.txt |uniq -c
+      1 Krishna is the god of universe
+      1 Krishna is the new greeting.
+      1 Krishna told bhagwad gita.
+cdac@LAPTOP-NV03GB24:~$ nano file1.txt
+cdac@LAPTOP-NV03GB24:~$ sort file1.txt |uniq -c
+      1 Krishna is the god of universe
+      2 Krishna is the new greeting.
+      1 Krishna told bhagwad gita.
+cdac@LAPTOP-NV03GB24:~$ cat file1.txt
+Krishna is the new greeting.
+Krishna is the god of universe
+Krishna told bhagwad gita.
+Krishna is the new greeting.
+
+.........................................
+
+cdac@LAPTOP-NV03GB24:~$ nano fruit.txt
+cdac@LAPTOP-NV03GB24:~$ cat fruit.txt
+apple
+mango
+apple
+mango
+mango
+strawberry
+kiwi
+kiwi
+cdac@LAPTOP-NV03GB24:~$ sort fruit.txt |uniq --count
+      2 apple
+      2 kiwi
+      3 mango
+      1 strawberry
+	  
+................................................
