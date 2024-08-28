@@ -99,7 +99,7 @@ Wed Aug 28 18:50:22 IST 2024
 cdac@LAPTOP-NV03GB24:~$ IP
 IP: command not found
 cdac@LAPTOP-NV03GB24:~$ hostname -I
-172.25.241.143
+198.85.248.159
 
 ..................................................
 
