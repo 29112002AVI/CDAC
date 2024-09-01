@@ -1,0 +1,25 @@
+What will the following commands do? 
+
+1.echo "Hello, World!" ------ print hello world on shell 
+ name="Productive" ------- save variable name= productive but doesnot display it
+ touch file.txt -------------- create file.txt in pwd
+ ls -a ---------- list all file with all extensions list and dir and hidden files
+ rm file.txt -------------- deletes file.txt
+ cp file1.txt file2.txt --------------- copy file1.txt to file2.txt 
+ mv file.txt /path/to/directory/  ------------ it moves file1.txt to directory specified in the path
+ chmod 755 script.sh .......... sets -rwxr-xr-x 1 cdac cdac   61 Sep  1 17:33 file1.txt 
+            this ie all permissons to user but execution and read to  
+ grep "pattern" file.txt ---------------- searches pattern inside file and displays all the lines consisting of text pattern
+ kill PID 
+ mkdir mydir && cd mydir && touch file.txt && echo "Hello, World!" > file.txt && cat file.txt ------------------- makes mydir and goes inside path and then creates file and print hello world and store that ouput into file.txt and print it
+
+ ls -l | grep ".txt" -----shows all file with txt extension in working directory
+cat file1.txt file2.txt | sort | uniq ---------------  concatenates files and sort them uniqely ie no duplicates
+ ls -l | grep "^d" ------------- file name starting with d displays.
+ grep -r "pattern" /path/to/directory/ ----------(-r) search pattern recursively in each file present in every directory as well as sub directories.
+ cat file1.txt file2.txt | sort | uniq –d 
+ chmod 644 file.txt ---------- 644 says u->(44+2 r+w)g->(r)o->(r)
+ cp -r source_directory destination_directory  ---------- copies from source directory to destination directory recursively also
+ find /path/to/search -name "*.txt" ------- find in this directory whose path given search text files
+ chmod u+x file.txt ------- set permissions
+ echo $PATH ---------------------> only displays path
