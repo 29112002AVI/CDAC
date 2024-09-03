@@ -1,0 +1,192 @@
+1. Reading Assignment: A Short History of Java
+•	Task: Read about the history and development of Java.
+•	Link: http://sunsite.uakom.sk/sunworldonline/swol-07-1995/swol-07-java.html
+
+	what i got form this:
+	JAVA or oak was developed by green team consisting of james gosling.eta. 
+	It was Sun technologies
+	In the Java world, a browser becomes a framework. 
+	it was in market at 1996 as java 1.0
+
+...........................
+2. Reading Assignment: Java Language Features
+•	Task: Learn about the main features of Java.
+•	Link: https://javaalmanac.io/features/
+
+	My take on this:-
+	Remove Permanent Generation	
+	Remove Permanent Generation	
+	Lambda Expressions	
+	Default Methods in Interfaces	
+	Effectively Final Variables	
+	Type Use Annotations	
+	Repeating Annotations	
+	Streams (java.util.stream)
+	These are most prominent features added in java 8
+	
+....................................................................
+
+3. Reading Assignment: Which Version of JDK Should I Use?
+•	Task: Find out which JDK version is right for you.
+•	Link: https://whichjdk.com/
+
+my takeaway:
+there is not only oracle who is java distributors 
+amazon, azul, IBM, Microsoft also prodeuce
+and market there own jdk.
+OpenJDK builds by Oracle (jdk.java.net)
+Oracle Java SE Development Kit (JDK)
+Adoptium Eclipse Temurin
+AdoptOpenJDK
+Azul Zulu
+Azul Zing
+BellSoft Liberica JDK
+IBM Semeru Runtime
+Amazon Corretto
+Microsoft Build of OpenJDK
+Alibaba Dragonwell
+SapMachine
+Red Hat OpenJDK
+GraalVM
+...........................................
+
+4. Reading Assignment: JDK Installation Directory Structure
+•	Task: Understand the folder structure and files in the JDK installation.
+•	Link: https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jdkfiles.html
+
+my takeway:
+jdk-1.8	{// root directory(contains 
+library,license, and src.zip 
+that has source code for java platform )}
+     bin //(path set is given of this only.enables dev tools)
+          java* // 
+          javac*
+          javap*
+          javah*
+          javadoc*
+     lib //(build, debug and customize)
+          tools.jar // eg house build(classes will be bricks, cement etc) 
+					kartoye and
+					tools will be like saws, drills etc 
+          dt.jar // how to design and display java components
+					(eg ineterior designer is ide and room is application)
+					
+     jre  // implementation of java tools
+          bin // serves as app launcher.same as bin but donot need path
+               java*
+          lib //rt.jar file  
+               applet // reduce stratup time for large applets
+               ext
+                    jfxrt.jar
+                    localdata.jar
+               fonts
+               security
+               sparc
+                    server
+                    client
+               rt.jar
+               charsets.jar
+			   
+jdk 
+ flow :jdk( bin, lib , jre)
+ ............................................
+ 
+ 5. Reading Assignment: About Java Technology
+•	Task: Read about the basics of Java technology and its components.
+•	Link: https://docs.oracle.com/javase/tutorial/getStarted/intro/definition.html
+
+	my take:
+	java is platform independent ie kontya pan platform var run karu shkato
+	and java is software and works on top of hardware
+	java platform has two components JVM and APIA
+	API is a large collection of ready made software that provide
+		many useful packages
+		
+	features of java?
+	develop programs more quickly
+	platform portable
+	software distribution is easy
+	write less code
+	
+	What Can Java Technology Do?
+	develop toold 
+	API
+	tools, packages are already available in the jdk
+The java app uses JVM to rin apps
+The Java programming language compiler (javac) takes your source file and translates its text into instructions that the Java virtual machine can understand. The instructions 
+contained within this file are known as bytecodes
+	
+.................................................................
+
+6. Coding Assignments
+1.	Hello World Program: Write a Java program that prints "Hello World!!" to the console.
+2.	Compile with Verbose Option: Compile your Java file using the -verbose option with javac. Check the output.
+3.	Inspect Bytecode: Use the javap tool to examine the bytecode of the compiled .class file. Observe the output.
+
+class Hello{
+	public static void main(String[] args){
+		System.out.println("Hello World!!");
+	}
+}
+C:\Users\Arvind\Desktop\CDAC\OOP JAVA\Day 1\Day1.1>javac Hello.java
+
+C:\Users\Arvind\Desktop\CDAC\OOP JAVA\Day 1\Day1.1>java Hello
+Hello World!!
+
+C:\Users\Arvind\Desktop\CDAC\OOP JAVA\Day 1\Day1.1>
+
+javac -verbose Hello.java
+
+javap -c Hello // bytecode of class file
+C:\Users\Arvind\Desktop\CDAC\OOP JAVA\Day 1\Day1.1>javap -c Hello
+Compiled from "Hello.java"
+class Hello {
+  Hello();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       3: ldc           #13                 // String Hello World!!
+       5: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       8: return
+}
+............................................................
+
+7. Reading Assignment: The JVM Architecture Explained
+•	Task: Learn about how the Java Virtual Machine (JVM) works.
+•	Link: https://dzone.com/articles/jvm-architecture-explained
+
+my take:
+
+JVM
+1 Loading 
+ CLASSES 	
+ .............> BOOTSTRAP LOADER(Highest priority, rt.jar)
+				extension classloader(ext , jre/bin)
+				App classloader(env variable, app level work)
+2. Linking 
+.................> Verify -bytecode verify bytecode proper
+				   Perpare- static variables memory allocated
+				   Resolve- all memory ref with original ref 
+				   from method area
+3. Initialization
+.................> static variables will be assigned 
+Runtime data area'
+..............>
+method area - class variables
+heap - one heap per JVM same as method
+stack - different. it is thread safe
+ 
+.......................................................
+
+8. Reading Assignment: The Java Language Environment: Contents
+•	Task: Explore the content and features of the Java language environment.
+•	Link: https://www.oracle.com/java/technologies/language-environment.html
+
+my take :
+
+
