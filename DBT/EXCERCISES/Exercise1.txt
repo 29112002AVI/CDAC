@@ -1,0 +1,70 @@
+ 
+5. Display all the data from the S table
+
+
+ select * from SUPPLIER;
+
+6. Display only the S# and SNAME fields from the S table.
+
+ select SID, SNAME from SUPPLIER;
+
+7. Display the PNAME and COLOR from the P table for the CITY=”London”.
+
+mysql> select PNAME, COLOR from PARTS
+    -> where CITY = 'London';
+
+
+8. Display all the Suppliers from London. 
+
+mysql> select * from SUPPLIER
+    -> WHERE CITY = 'London';
+
+
+9. Display all the Suppliers from Paris or Athens. 
+
+mysql> select * from SUPPLIER
+    -> WHERE CITY = 'Paris' or CITY = 'Athens';
+
+
+
+10. Display all the Projects in Athens
+
+mysql> select * from PROJECTS
+    -> WHERE CITY = 'London';
+
+
+11. Display all the Partnames with the weight between 12 and 14 (inclusive of both).
+
+ SELECT * from PARTS
+    -> WHERE WEIGHT>=12 AND WEIGHT<=14;
+
+
+12. Display all the Suppliers with a Status greater than or equal to 20.
+
+ select * from SUPPLIER
+    -> WHERE STATUS >=20;
+
+13. Display all the Suppliers except the Suppliers from London. 
+
+
+mysql> select * from SUPPLIER
+    -> WHERE CITY!= 'London';
+
+ 
+14. Display only the Cities from where the Suppliers come from. 
+
+mysql> select CITY FROM SUPPLIER;
+
+
+15. Assuming that the Part Weight is in GRAMS, display the same in 
+MILLIGRAMS and KILOGRAMS. 
+
+
+mysql> select WEIGHT, WEIGHT*1000 AS "KILOGRAMS WEIGHT"
+    -> FROM PARTS;
+
+
+mysql> select weight , weight/1000 as "MILIGRAM WEIGHT"
+    -> from PARTS;
+
+
