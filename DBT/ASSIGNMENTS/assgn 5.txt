@@ -1,0 +1,35 @@
+1) Write a query that will give you all orders for more than Rs. 1,000.
+
+mysql> select * from orders
+    -> where amt>1000 ;
+
+2) Write a query that will give you the names and cities of all salespeople in 
+London with a commission above .10. 
+
+
+mysql> select * from salespeople
+    -> where comm>0.10 and city = 'London';
+
+3) Write a query on the Customers table whose output will exclude all customers 
+with a rating <= 100, unless they are located in Rome. 
+
+mysql> select * from customers
+    -> where rating<=100 or city = 'Rome';
+
+
+5) What will be the output of the following query? 
+ 
+ Select * from Orders 
+ where NOT ((odate = ‘1990-10-03’ OR snum 
+ >1006) AND amt >= 1500);
+
+
+it will show not show  rows which do  have odate = ‘1990-10-03' and also sum>1006 and combine amt also  greater than 1500)
+as NOT GOES FOR CONVERTING IT INTO FALSE CONDITION.
+
+
+
+
+
+mysql> select * from salespeople;
+ 

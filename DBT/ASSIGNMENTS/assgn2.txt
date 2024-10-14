@@ -1,0 +1,16 @@
+1) Which field of the Customers table is the primary key?
+
+CNUM IS THE FIELD
+
+2) What is the 4th column of the Customers table?
+rating is the 4 th column
+
+3) What is another word for row? For column?
+
+row - record, entry , observation, tuple
+column - field , attribute
+
+
+4) Why isn’t it possible to see the first five rows of a table
+
+it is not possible in db HD server the whole table is present but in server ram the addresses are scattered and not maintained in ordered.

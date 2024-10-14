@@ -1,0 +1,37 @@
+
+
+Write a select command that produces the order number, amount, and date for all 
+rows in the Orders table.
+
+
+mysql> select Onum,AMT,ODATE from ORDERS;
+
+
+Write a query that produces all rows from the Customers table for which the 
+salesperson’s number is 1001.
+
+
+mysql> select * from customers
+    -> where SNUM = 1001;
+
+
+) Write a query that displays the Salespeople table with the columns in the 
+following order: city, sname, snum, comm.
+
+mysql> select CITY, SNAME,SNUM, COMM from salespeople;
+
+
+4) Write a select command that produces the rating followed by the name of each 
+customer in San Jose.
+
+
+mysql> select RATING , CNAME  from customers;
++--------+----------+
+
+5) Write a query that will produce the snum values of all salespeople (suppress the 
+duplicates) with orders in the Orders table
+
+
+mysql> select distinct SNUM from ORDERS;
+
+

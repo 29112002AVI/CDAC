@@ -1,0 +1,8 @@
+) Does ANSI recognize the data type DATE?
+yes , it has recognised and and the default format is 'yyyy -mm-dd'
+7 byte storage.
+
+) Which subdivision of SQL is used to insert values in tables?
+
+data manipulation language.
+

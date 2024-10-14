@@ -1,0 +1,32 @@
+
+
+) Write two different queries that would produce all orders taken on October 3rd or 
+4
+th, 1990.
+
+mysql> select * from ORDERS
+    -> WHERE odate = '1990-10-03';
+
+
+mysql> select * from ORDERS
+    -> WHERE odate = '1990-10-04';
+
+
+
+2) Write a query that selects all of the customers serviced by Peel or Motika.
+(Hint: the snum field relates the two tables to one another). 
+
+
+
+3) Write a query that will produce all the customers whose names begin with a letter 
+from ‘A’ to ‘G’.
+
+mysql> select * from customers
+    -> where Cname between 'A' and 'G';
+
+
+4.4) Write a query that selects all customers whose names begin with the letter ‘C’.
+
+mysql> select * from customers
+    -> where Cname like 'C%' ;
+
