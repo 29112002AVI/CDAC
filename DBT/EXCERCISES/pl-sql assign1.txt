@@ -1,0 +1,226 @@
+
+1. Write a program that computes the perimeter and the area of a rectangle. Define 
+your own values for the length and width. (Assuming that L and W are the length 
+and width of the rectangle, Perimeter = 2*(L+W) and Area = L*W.
+
+
+mysql> create procedure rec()
+    -> begin
+    ->  declare length int ;
+    ->  declare width int ;
+    ->  declare p int;
+    ->  declare a int;
+    -> set length = 25;
+    -> set width = 21;
+    -> set p = 2*(length+width);
+    -> set a = length*width;
+    -> insert into temp values(p,a);
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> delimiter ;
+mysql> select * from temp;
+Empty set (0.00 sec)
+
+mysql> call rec();
+
+mysql> select * from temp;
++------+------+
+| fir  | rec  |
++------+------+
+|   92 | 525  |
++------+------+
+
+
+
+
+
+
+
+
+2. Write a program that declares an integer variable called num, assigns a value to it, 
+and computes and inserts into the tempp table the value of the variable itself, its 
+square, and its cube.
+
+mysql> create procedure sqr()
+    -> begin
+    ->  declare num int default 5;
+    ->  declare sq int;
+    ->  declare cu int;
+    ->  set sq = power(num,2);
+    ->  set cu = power(num,3);
+    ->  insert into temp values(sq,cu);
+    -> end;
+    -> //
+
+
+mysql> delimiter ;
+mysql> call sqr();
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from temp;
++------+------+
+| fir  | rec  |
++------+------+
+|   92 | 525  |
+|   25 | 125  |
++------+------+
+
+
+
+
+
+
+
+3. Convert a temperature in Fahrenheit (F) to its equivalent in Celsius (C) and vice 
+versa. The required formulae are:- C= (F-32)*5/9 
+F= 9/5*C + 32 
+
+
+mysql>  create procedure temperature(x int celin , y far int)
+    ->  begin
+    ->  declare cel int default 26;
+    ->  declare far int default 34;
+    ->  set cel = (far-32)*5/9;
+    ->  set far = 9/5 *cel + 32;
+    ->  insert into temp values(cel,far);
+    ->  end;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> delimiter ;
+mysql> call temperature();
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from temp;
++------+------+
+| fir  | rec  |
++------+------+
+|   92 | 525  |
+|   25 | 125  |
+|    1 | 34   |
++------+------+
+3 rows in set (0.00 sec)
+
+
+
+
+
+5. Write a program that enables a user to input an integer. The program should then 
+state whether the integer is evenly divisible by 5.
+
+
+mysql> create procedure even(num int)
+    -> begin
+    -> if(num%5 = 0) then
+    ->          insert into temp values (num,'is evenly divisible');
+    -> else
+    ->          insert into temp values (num,'is not divisible');
+    -> end if;
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> delimiter ;
+mysql> call even(15);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select *from temp;
++------+---------------------+
+| fir  | rec                 |
++------+---------------------+
+|   92 | 525                 |
+|   25 | 125                 |
+|    1 | 34                  |
+|   15 | is evenly divisible |
++------+---------------------+
+4 rows in set (0.00 sec)
+
+mysql> call even(14);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select *from temp;
++------+---------------------+
+| fir  | rec                 |
++------+---------------------+
+|   92 | 525                 |
+|   25 | 125                 |
+|    1 | 34                  |
+|   15 | is evenly divisible |
+|   14 | is not divisible    |
++------+---------------------+
+5 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+6. Your block should read in two real numbers and tell whether the product of the two 
+numbers is equal to or greater than 100.
+
+
+mysql> create procedure prod(num1 int , num2 int)
+    -> begin
+    ->  declare res int;
+    ->  set res = num1 * num2;
+    -> if(res = 100)
+    -> then
+    ->  insert into temp values(res , 'equal to 100');
+    -> elseif(res > 100)
+    -> then
+    ->  insert into temp values(res,'greater than 100');
+    ->  end if;
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> delimiter ;
+mysql> call prod(10,10);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from temp;
++------+---------------------+
+| fir  | rec                 |
++------+---------------------+
+|   92 | 525                 |
+|   25 | 125                 |
+|    1 | 34                  |
+|   15 | is evenly divisible |
+|   14 | is not divisible    |
+|  100 | equal to 100        |
++------+---------------------+
+6 rows in set (0.00 sec)
+
+mysql> call prod(50,50);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from temp;
++------+---------------------+
+| fir  | rec                 |
++------+---------------------+
+|   92 | 525                 |
+|   25 | 125                 |
+|    1 | 34                  |
+|   15 | is evenly divisible |
+|   14 | is not divisible    |
+|  100 | equal to 100        |
+| 2500 | greater than 100    |
++------+---------------------+
+7 rows in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+
